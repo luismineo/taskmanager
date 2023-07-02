@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Validator; //importando validator (facilita a validção de dados)
 
 class TaskController extends Controller
 {
     //listar as tarefas
     public function index(){
         $tasks = Task::all();
-        return response()->json($tasks);
+        return response()->json($tasks); //retornando o request já convertido para JSON
     }
 
     //detalhes da tarefa
@@ -29,7 +29,7 @@ class TaskController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return response()->json(['errors' => $validator->errors()], 422); //código 422 Unprocessable Entity
         }
 
         $task = Task::create($request->all());
@@ -45,7 +45,7 @@ class TaskController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return response()->json(['errors' => $validator->errors()], 422); //código 422 Unprocessable Entity
         }
 
         $request->validate([
@@ -63,6 +63,6 @@ class TaskController extends Controller
     public function destroy($id){
         $task = Task::findOrFail($id);
         $task->delete();
-        return response()->json(null, 204);
+        return response()->json(null, 204); //código 204 no content
     }
 }

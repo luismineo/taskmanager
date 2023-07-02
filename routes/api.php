@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TaskController;
+use Illuminate\Support\Facades\Route; //importando o Route, que gera automaticamente as rotas
+use App\Http\Controllers\TaskController; //linkando o controller
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('tasks', TaskController::class);
+Route::resource('tasks', TaskController::class); //define automáticamente as rotas de acordo com o que foi definido no controller
