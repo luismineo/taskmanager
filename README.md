@@ -1,6 +1,9 @@
 # Task Manager
 Projeto laravel da aula **Criação de API Rest básica com PHP**, onde foi criado um gerenciador de tarefas que devem conter um **Título, Descrição e um Status**
 
+### Vídeo apresentando o projeto
+https://youtu.be/vML1opnPWHE
+
 # Documentação
 
 ### A documentação das rotas esta descrita no documento publicado via POSTMAN
