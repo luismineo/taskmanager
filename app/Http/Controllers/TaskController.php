@@ -48,12 +48,6 @@ class TaskController extends Controller
             return response()->json(['errors' => $validator->errors()], 422); //código 422 Unprocessable Entity
         }
 
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'status' => 'required|in:concluída,não concluída',
-        ]);
-
         $task = Task::findOrFail($id);
         $task->update($request->all());
         return response()->json($task);
